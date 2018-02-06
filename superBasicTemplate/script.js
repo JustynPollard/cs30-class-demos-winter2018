@@ -1,12 +1,70 @@
+// global variables
+let x;
+let y;
+let isMovingUp, isMovingDown, isMovingLeft, isMovingRight;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  x = width/2;
+  y = height/2;
+  isMovingUp = false;
+  isMovingDown = false;
+  isMovingLeft = false;
+  isMovingRight = false;
 }
 
 function draw() {
   background(255);
 
+  moveStickman();
+
   drawStickman(mouseX, mouseY);
-  drawStickman(100, 200);
+  drawStickman(x, y);
+}
+
+function keyPressed() {
+  if (key == 'w' || key == 'W') {
+    isMovingUp = true;
+  }
+  else if (key == 's' || key == 'S') {
+    isMovingDown = true;
+  }
+  if (key == 'a' || key == 'A') {
+    isMovingLeft = true;
+  }
+  else if (key == 'd' || key == 'D') {
+    isMovingRight = true;
+  }
+}
+
+function keyReleased() {
+  if (key == 'w' || key == 'W') {
+    isMovingUp = false;
+  }
+  else if (key == 's' || key == 'S') {
+    isMovingDown = false;
+  }
+  if (key == 'a' || key == 'A') {
+    isMovingLeft = false;
+  }
+  else if (key == 'd' || key == 'D') {
+    isMovingRight = false;
+  }
+}
+
+function moveStickman() {
+  if (isMovingUp) {
+    y = y - 10;
+  }
+  if (isMovingDown) {
+    y = y + 10;
+  }
+  if (isMovingLeft) {
+    x -= 10;
+  }
+  if (isMovingRight) {
+    x += 10;
+  }
 }
 
 function drawStickman(x, y) {
