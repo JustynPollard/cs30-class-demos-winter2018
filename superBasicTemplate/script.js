@@ -1,6 +1,5 @@
 // global variables
-let x;
-let y;
+let x, y;
 let isMovingUp, isMovingDown, isMovingLeft, isMovingRight;
 
 function setup() {
