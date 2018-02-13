@@ -1,13 +1,16 @@
 ## Setting Up Atom
 
-Install the following packages (Atom Preferences/Settings -> Install):
+Install the following packages (Atom Settings/Preferences -> Install):
 - p5js-snippets
 - p5js-toolbar
-- atom-beautify 
-  - once installed, open settings -> Packages -> atom-beautify Settings
+- atom-beautify
+  - once installed, open Settings -> Packages -> atom-beautify Settings
   - select JavaScript -> Brace style -> end-expand
-- linter-eslint 
+- linter-eslint
   - say yes to all dependencies during install
+
+On Windows, add context menu to Windows Explorer by:
+- Settings (Ctrl+Comma) -> System -> check all boxes
 
 ## For Each New Project
 
