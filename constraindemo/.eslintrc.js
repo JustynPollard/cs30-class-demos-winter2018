@@ -11,7 +11,7 @@ module.exports = {
     },
     "rules": {
         // enable additional rules
-        "indent": ["warn", 2],
+        "indent": ["error", 2],
         "quotes": ["warn", "double"],
         "semi": ["error", "always"],
         "no-extra-parens": ["warn", "all"],
