@@ -1,7 +1,7 @@
 // global variables
 let x, y;
 let isMovingUp, isMovingDown, isMovingLeft, isMovingRight;
-let redAmount;
+let redAmount, redSpeed;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -12,6 +12,7 @@ function setup() {
   isMovingLeft = false;
   isMovingRight = false;
   redAmount = 0;
+  redSpeed = 3;
 }
 
 function draw() {
@@ -80,11 +81,11 @@ function drawStickman(x, y) {
   ellipse(x, y, 100, 100);
 
   // hat
-  redAmount = (redAmount + 1) % 255;
+  redAmount += redSpeed;
 
-  // if (redAmount === 255) {
-  //   redAmount = 0;
-  // }
+  if (redAmount === 255 || redAmount === 0) {
+    redSpeed *= -1;
+  }
 
   fill(redAmount, 0, 0);
   rect(x - 50, y - 80, 100, 30);
