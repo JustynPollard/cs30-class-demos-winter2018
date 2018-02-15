@@ -11,7 +11,7 @@ module.exports = {
     },
     "rules": {
         // enable additional rules
-        "indent": ["error", 2],
+        "indent": ["warn", 2],
         "quotes": ["warn", "double"],
         "semi": ["error", "always"],
         "no-extra-parens": ["warn", "all"],
@@ -30,6 +30,9 @@ module.exports = {
         "no-unused-vars": "off"
     },
     "globals": {
+      //allow direct access to the DOM without errors
+      "document": true,
+      "window": true,  
       //p5js globals
       "remove": true,
       "canvas": true,
